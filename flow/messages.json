@@ -1,14 +1,13 @@
 {
     "STEP_1": [
-        "🅷🅾🅻🅰 ¡Bienvenid@ a mi chat de WhatsApp! 📱💻💰 \n",
-        " *Te saluda CrediBot* � el asistente virtual 💻 de Créditos Torres J.L🖐️😃",
-        " 👇 ",
-        " ‼️ En qué puedo servirte? ‼️",
-        " � Si necesitas saber sobre algún productos 🛋️🛒escribe la palabra ‼️ Catalogo y te mostrare nuestras categorías😉",
-        "❓O si necesitas algún asesor escribe la palabra Asesor 👨🏻�"
+        "Hola soy tu Asistente Virtual 🤖 un placer atenderte. ¿Cómo puedo ayudarte hoy?\n\n",
+                " Crearte como *Cliente* Nuevo 🧾\n",
+                " Conocer Nuestro *Productos* 💰\n",
+                " Hacer una *pregunta* ❓\n",
+                " Nuestro *Punto* de venta ⛳ \n"   
     ],
     "STEP_2": [
-        "Perfecto estas son nuestras categorías. 🙂🤖�"
+        "Perfecto estas son nuestras categorías:"
     ],
     "STEP_2_1": [
         "Lo siento no tenemos esa categoria"
@@ -17,17 +16,17 @@
         "Recuerda que puedes escribir Asesor"
     ],
     "STEP_2_3": [
-        "Si estas interesado en este producto escribe *hacer pedido* y si quieres",
+        "Si estas interesado en este producto escribe *hacer pedido* y si quieres ",
         "ver otro articulo escribe la palabra *productos*"
     ],
     "STEP_2_4": [
         "Buscando el mejor precio ...."
     ],
     "STEP_3": [
-        "De que municipio eres?"
+        "Por favor dejanos tu pregunta"
     ],
     "STEP_3_1": [
-        "Lo siento no tenemos asesor intenta con otro municipio"
+        "Gracias uno de nuestros asesores se comunicaran en breve "
     ],
     "STEP_4": [
         "Fue un placer hablar contigo ",
@@ -37,35 +36,49 @@
         "Cual es tu nombre?"
     ],
     "STEP_5_1": [
-        "Que producto necesitas?"
+        "¿Que producto necesitas?\n( _Pollo Entero, Pollo broaster, Pechuga, Pernil, Alas, Viscera_ )"
     ],
     "STEP_5_2": [
-        "Tu forma de pago cual es: crédito? credicontado? contado?"
+        "En que presentacion necesitas tu producto \n ( _En caso de ser pollo colocar el tamaño deseado 1.3, 1,4 ..._ )\n ( _En caso se ser presas especifica Kilos, Unidades_ )"
     ],
     "STEP_5_3": [
-        "¿De que municipio eres?"
+        "¿Que cantidad necesitas?"
     ],
     "STEP_5_4": [
-        "Tus datos son \n",
-        "Nombre: *%NAME%* \n",
-        "Municipio: *%LOCATION%* \n",
-        "estas interesado en un *%PRODUCT%* \n",
-        "y lo quieres comprar a *%METHOD%* \n",
-        "Esta informacion es correct? "
+        "¿Cual es tu dirección?"
     ],
     "STEP_5_5": [
-        "Esta informacion es correcta? De ser correcta responde *SI* de lo contrario *Hacer pedido*"
+        "Tus datos son \n",
+        "Nombre: *%NAME%* \n",
+        "Dirección: *%LOCATION%* \n",
+        "Tu pedido es: *%CANTIDAD% %PRODUCT% x %TAMANO%* \n"
     ],
     "STEP_5_6": [
-        "Ok perfecto muy pronto un asesor lo estará contactando"
+        "Esta informacion es correcta? De ser correcta responde *SI* de lo contrario *Hacer pedido*"
     ],
     "STEP_5_7": [
+        "Ok perfecto muy pronto un asesor lo estará contactando"
+    ],
+    "STEP_5_8": [
         "Nuevo cliente sus datos son \n",
         "Nombre: %NAME% \n",
         "Municipio: %LOCATION% \n",
         "estas interesado en un %PRODUCT% \n",
         "y lo quieres comprar a %METHOD% \n \n",
         "Su numero de contacto es %USERPHONE%"
+    ],
+    "STEP_6": [
+        "Para crearte como cliente nuevo necesitamos que tengas listo los siguientes documentos:\n\n", 
+        "🧾 Copia de Rut actualizado\n", 
+        "🚻 Copia de Cedula de ciudadanía ambos lados\n",
+        "🧾 Copia de camara de comercio (solo para personas juridicas)\n\n",
+        "¿Quieres conoscer nuestros productos cons sus precios? Por favor dijita *Productos*"
+    ],
+    "STEP_7": [
+        "Nuestro Gracias por preferirnos\n\n", 
+        "Nuestra bodega queda en Calle 25 # 6 - 20 Barrio Jose Eustacio Rivera\n",
+        "Sera un placer atenderte\n\n",
+        "¿Quieres conoscer nuestros productos con sus precios? Por favor dijita *Productos*"
     ],
     "ERROR": [
         "Ups lo siento no puedo comprenderte"

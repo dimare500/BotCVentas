@@ -4,12 +4,10 @@
         "ola",
         "ole",
         "inicio",
-        "welcome",
         "buenos días",
         "buenas tardes",
         "buenas noches",
         "me dieron este número",
-        "venden a crédito",
         "quisiera saber si venden",
         "necesito saber"
     ],
@@ -19,10 +17,8 @@
         "categoría"
     ],
     "STEP_3": [
-        "asesor",
-        "asesores",
-        "Vendedor",
-        "cobrador"
+        "pregunta",
+        "hacer una pregunta"
     ],
     "STEP_4": [
         "muchas gracias",
@@ -36,5 +32,13 @@
     "STEP_5_5": [
         "si",
         "correcto"
-    ]
+    ],
+    "STEP_6": [
+        "cliente",
+        "cliente nuevo"
+    ],
+    "STEP_7": [
+    "punto",
+    "ubicacacion"
+]
 }

@@ -152,10 +152,10 @@ const connectionReady = () => {
             /**
              * Aqui damos la bienvenida
              */
-
+             
             console.log('STEP1', body);
 
-            sendMessage(from, messages.STEP_1.join(''))
+            sendMedia(from,'PolloIni.jpg',messages.STEP_1.join(''))
             return
         }
 
@@ -200,12 +200,35 @@ const connectionReady = () => {
 
         if (flow.STEP_5.includes(body)) {
             /**
-             * Aqui comenzamos a pedir datos al usuario
+             * Aqui comenenzamos apedir datos del usuario
             */
             const step5 = messages.STEP_5.join('')
             console.log(step5)
             sendMessage(from, step5)
             await readChat(from, body, 'STEP_5_1')
+            return
+        }
+
+        if (flow.STEP_6.includes(body)) {
+            /**
+             * Aqui respondemos documentos de cliente nuevo
+            */
+            const step6 = messages.STEP_6.join('')
+            console.log(step6)
+            sendMessage(from, step6)
+            await readChat(from, body,)
+            return
+        }
+
+        if (flow.STEP_7.includes(body)) {
+            /**
+             * Aqui respondemos ubicacion
+            */
+            const step7 = messages.STEP_7.join('')
+            console.log(step7)
+            sendMessage(from, step7)
+            sendMedia(from,'ubicacion.jpg',"https://acortar.link/ir71I")
+            await readChat(from, body,)
             return
         }
 
@@ -318,12 +341,22 @@ const connectionReady = () => {
             return
         }
 
-        /* Seguimos el flujo de los asesores */
         if (step && step.includes('STEP_3_1')) {
+
+            const step3_1 = messages.STEP_3_1.join('')
+            console.log(step3_1)
+            sendMessage(from, step3_1)
+            await readChat(from, body,)
+            return
+        }
+
+        /* Seguimos el flujo de los asesores 
+        if (step && step.includes('STEP_3_1')) {
+            
 
             /**
              * Buscar asesor en json
-             */
+             
             const insideText = body.toLowerCase();
             const vendorFind = vendors[insideText] || null;
 
@@ -335,7 +368,7 @@ const connectionReady = () => {
                 await readChat(from, body)
             }
             return
-        }
+        }*/
 
         /** Seguimos flujo de pedir datos */
         if (step && step.includes('STEP_5_1')) {
@@ -357,7 +390,6 @@ const connectionReady = () => {
             return
         }
 
-        /** Seguimos flujo de pedir asesor el municipio */
         if (step && step.includes('STEP_5_3')) {
 
             const step5_3 = messages.STEP_5_3.join('')
@@ -367,53 +399,75 @@ const connectionReady = () => {
             return
         }
 
-        /* Seguimos el flujo de los asesores */
+        /** Seguimos flujo de pedir asesor el municipio */
         if (step && step.includes('STEP_5_4')) {
 
             const step5_4 = messages.STEP_5_4.join('')
-            const step5_5 = messages.STEP_5_5.join('')
-            let messageStep5_4 = step5_4;
-            const userName = await handleExcel(from, 'STEP_5_2');
-            const userProduct = await handleExcel(from, 'STEP_5_3');
-            const userMethodPay = await handleExcel(from, 'STEP_5_4');
-
-            messageStep5_4 = messageStep5_4.replace('%NAME%', userName.value || '')
-            messageStep5_4 = messageStep5_4.replace('%LOCATION%', body || '')
-            messageStep5_4 = messageStep5_4.replace('%PRODUCT%', userProduct.value || '')
-            messageStep5_4 = messageStep5_4.replace('%METHOD%', userMethodPay.value || '')
-
-            sendMessage(from, messageStep5_4)
-            sendMessage(from, step5_5)
+            console.log(step5_4)
+            sendMessage(from, step5_4)
             await readChat(from, body, 'STEP_5_5')
             return
         }
 
+        /* Seguimos el flujo de los asesores */
         if (step && step.includes('STEP_5_5')) {
-            if (flow.STEP_5_5.includes(body)) {
-                const step5_6 = messages.STEP_5_6.join('')
-                sendMessage(from, step5_6)
 
+            const step5_5 = messages.STEP_5_5.join('')
+            const step5_6 = messages.STEP_5_6.join('')
+            let messageStep5_5 = step5_5;
+            const userName = await handleExcel(from, 'STEP_5_2');
+            const userProduct = await handleExcel(from, 'STEP_5_3');
+            const userTamano = await handleExcel(from, 'STEP_5_4');
+            const userCantidad = await handleExcel(from, 'STEP_5_5');
+
+            messageStep5_5 = messageStep5_5.replace('%NAME%', userName.value || '')
+            messageStep5_5 = messageStep5_5.replace('%LOCATION%', body || '')
+            messageStep5_5 = messageStep5_5.replace('%PRODUCT%', userProduct.value || '')
+            messageStep5_5 = messageStep5_5.replace('%TAMANO%', userTamano.value || '')
+            messageStep5_5 = messageStep5_5.replace('%CANTIDAD%', userCantidad.value || '')
+
+            sendMessage(from, messageStep5_5)
+            sendMessage('573112516838@c.us', messageStep5_5)
+            sendMessage(from, step5_6)
+            await readChat(from, body, 'STEP_5_7')
+            return
+        }
+        if (step && step.includes('STEP_5_7')) {
+
+            const step5_7 = messages.STEP_5_7.join('')
+            console.log(step5_7)
+            sendMessage(from, step5_7)
+            await readChat(from, body)
+            return
+        }
+
+        /*if (step && step.includes('STEP_5_6')) {
+            if (flow.STEP_5_6.includes(body)) {
                 const step5_7 = messages.STEP_5_7.join('')
-                let messageStep5_7 = step5_7;
+                sendMessage(from, step5_7)
+
+                const step5_8 = messages.STEP_5_8.join('')
+                let messageStep5_8 = step5_8;
                 const userName = await handleExcel(from, 'STEP_5_2');
                 const userLocation = await handleExcel(from, 'STEP_5_5');
                 const userProduct = await handleExcel(from, 'STEP_5_3');
-                const userMethodPay = await handleExcel(from, 'STEP_5_4');
+                const userTamano = await handleExcel(from, 'STEP_5_4');
 
-                messageStep5_7 = messageStep5_7.replace('%NAME%', userName.value)
-                messageStep5_7 = messageStep5_7.replace('%LOCATION%', userLocation.value)
-                messageStep5_7 = messageStep5_7.replace('%PRODUCT%', userProduct.value)
-                messageStep5_7 = messageStep5_7.replace('%METHOD%', userMethodPay.value)
-                messageStep5_7 = messageStep5_7.replace('%USERPHONE%', clearNumber(from))
+                messageStep5_8 = messageStep5_8.replace('%NAME%', userName.value)
+                messageStep5_8 = messageStep5_8.replace('%LOCATION%', userLocation.value)
+                messageStep5_8 = messageStep5_8.replace('%PRODUCT%', userProduct.value)
+                messageStep5_8 = messageStep5_8.replace('%TAMANO%', userTamano.value)
+                messageStep5_8 = messageStep5_8.replace('%USERPHONE%', clearNumber(from))
 
-                mail.sendMail(messageStep5_7)
+                mail.sendMail(messageStep5_8)
                 await readChat(from, body)
             } else {
                 sendMessage(from, messages.ERROR.join(''))
                 await readChat(from, body)
+                
             }
             return
-        }
+        }*/
 
         /********************************** DEFAULT************************* */
         sendMessage(from, messages.ERROR.join(''))
